@@ -18,5 +18,6 @@ public:
     void insert(int k,node* nd);
     void remove(int k);
     node* find(int k);
+    void print();
 };
 #endif

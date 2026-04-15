@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #include "lru_node.h"
 #include "hash_table.h"
-
+using namespace std;
     hnode::hnode(int k,node* nd){
         nod=nd;
         key=k;
@@ -61,5 +61,17 @@ void hashtable::remove(int key){
 
         prev = temp;
         temp = temp->next;
+    }
+}
+
+void hashtable::print(){
+    for(int i=0;i<10;i++){
+        hnode* temp=table[i];
+        cout<<"BUCKET "<<i<<":";
+        while(temp!=NULL){
+            cout<<"("<<temp->nod->key<<","<<temp->nod->val<<")";
+            temp=temp->next;
+        }
+        cout<<endl;
     }
 }
